@@ -1,0 +1,71 @@
+
+.movieList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.movieResult {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 200px;
+    cursor: pointer;
+    margin: 20px;
+    border-radius: 4px;
+    transition: transform 0.3s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3)
+}
+.movieResult:hover{
+    transform: scale(1.1);
+    z-index: 1;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5)
+}
+
+
+.ratingAndTitle {
+    background: linear-gradient(to bottom right, snow, silver)
+}
+
+.buttonPagination {
+    height: 25px;
+    width: 50px;
+    border-radius: 3px;
+    border: 1px;
+    background: linear-gradient(to bottom right, #c7c6c6, #8a8989);
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+.buttonPagination:hover {
+    background: linear-gradient(to bottom right, #9f9e9e, #626262);
+}
+.buttonDiv {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.movieResultDark {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 200px;
+    cursor: pointer;
+    margin: 20px;
+    border-radius: 4px;
+    transition: transform 0.3s;
+    box-shadow: 5px 5px 10px rgba(98, 97, 97, 0.3)
+}
+.movieResultDark:hover{
+    transform: scale(1.1);
+    z-index: 1;
+    box-shadow: 5px 5px 10px rgba(98, 97, 97, 0.5)
+}
+
+.ratingAndTitleDark {
+    background: linear-gradient(to bottom right, #262626, #949393);
+    color: #d3d3d3;
+}

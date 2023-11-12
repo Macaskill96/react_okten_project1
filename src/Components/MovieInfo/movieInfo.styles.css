@@ -1,0 +1,30 @@
+.back_drop {
+    width: 300px;
+    height: 400px;
+}
+
+.movieInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.movieInfo p{
+    width: 500px;
+}
+.buttonBack {
+    height: 25px;
+    width: 50px;
+    border: #676767 1px;
+    background: linear-gradient(to bottom right, snow, #949393);
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 50px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+.buttonBack:hover {
+    transform: scale(1.1,1.1);
+    background: linear-gradient(to bottom right, #949393, #2f2f2f);
+    z-index: 1;
+}

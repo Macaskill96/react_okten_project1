@@ -1,0 +1,23 @@
+.input {
+    background: #f1f1f1;
+    height: 25px;
+    border: 0;
+    border-radius: 3px 0 0 3px;
+    transition: background-color 0.3s ease;
+}
+.input:focus {
+    border: none;
+    outline: none;
+    background: #b7bbba;
+    text-decoration: none;
+}
+.buttonInput {
+    background: #d8e0de;
+    height: 27px;
+    border: 0;
+    border-radius: 0 3px 3px 0;
+    transition: background-color 0.3s ease;
+}
+.buttonInput:hover{
+    background: #b7bbba;
+}

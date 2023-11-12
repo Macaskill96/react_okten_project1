@@ -1,0 +1,27 @@
+.logo {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo h3 {
+    font-family: "Arial Rounded MT Bold";
+    font-size: 30px;
+    color: #9f9e9e;
+}
+
+.logoDark {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoDark h3 {
+    font-family: "Arial Rounded MT Bold";
+    font-size: 30px;
+    color: black;
+}

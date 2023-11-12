@@ -1,0 +1,40 @@
+.genreBadge {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.genreTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 100px;
+    font-size: 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: font-size 0.2s;
+}
+.genreTitle:hover {
+    background: linear-gradient(to bottom right, #b6b2b2, #494141);
+    color: #640202;
+    font-size: 22px;
+}
+
+.genreTitleDark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    color: #b0b1b2;
+    height: 100px;
+    font-size: 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: font-size 0.2s;
+}
+
+.genreTitleDark:hover {
+    background: linear-gradient(to bottom right, #b6b2b2, #494141);
+    color: #d3d3d3;
+    font-size: 22px;
+}

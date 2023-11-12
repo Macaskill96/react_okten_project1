@@ -1,0 +1,10 @@
+.img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+.imgPosterInfo {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+}

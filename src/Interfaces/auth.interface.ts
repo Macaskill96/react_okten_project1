@@ -1,10 +1,5 @@
 export interface IAuthInterface {
-    avatar:{
-        gravatar:{
-            hash:string
-        },
-        tmdb:{}
-    },
+
     id: number,
     name: string,
     include_adult: boolean,

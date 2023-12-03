@@ -1,34 +1,29 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useEffect} from 'react';
 import {useNavigate} from "react-router";
-import {useSearchParams} from "react-router-dom";
 
-import {IMovieData} from "../../Interfaces";
-import {movieService} from "../../services";
 import usePagination from "../../hooks/usePagination";
-import './movieList.styles.css'
 import {PosterMovie} from "../PosterMovie";
 import {StarsRating} from "../StarsRating";
-import {useTheme} from "../../hooks";
+import {useAppDispatch, useAppSelector, useTheme} from "../../hooks";
+import {movieActions} from "../../redux";
+import './movieList.styles.css'
+
 const MoviesList:FC = () => {
-    const [movieData, setMovieData] = useState<IMovieData | null>(null)
-    const [queryPage, setQueryPage] = useSearchParams({page:'1'})
+    const {movies} = useAppSelector(state => state.movie)
+    const { currentPage, nextPage, prevPage } = usePagination();
     const navigate = useNavigate();
     const {theme} = useTheme()
-    const { currentPage, nextPage, prevPage } = usePagination(Number(queryPage.get('page') ?? '1'));
+    const dispatch = useAppDispatch();
 
-    useEffect(()=> {
-        movieService.getAll(currentPage.toString()).then(({data})=> {
-            setMovieData(data)
-            queryPage.set('page', currentPage.toString());
-            setQueryPage(queryPage);
-        })
-    }, [queryPage, currentPage])
+    useEffect(() => {
+        dispatch(movieActions.getAll(currentPage.toString()));
+    }, [currentPage, dispatch]);
 
 
     return (
         <div>
             <div className={'movieList'}>
-                {movieData?.results.map(item=>
+                {movies.results.map(item=>
                     (<div key={item.id} onClick={()=>navigate(`${item.id}`, {state:item.id})} className={theme? 'movieResult' : 'movieResultDark'} >
                         <PosterMovie poster={item.backdrop_path} alt={item.original_title}/>
                         <div className={theme? 'ratingAndTitle' : 'ratingAndTitleDark'}>
@@ -38,12 +33,13 @@ const MoviesList:FC = () => {
 
 
                     </div>))}
-                <div className='buttonDiv'>
+            </div>
+            <div className='buttonDiv'>
+                <div>
                     <button disabled={currentPage === 1} onClick={prevPage} className='buttonPagination'>Prev</button>
-                    <p style={{ color: theme ? 'black' : '#d3d3d3' }}>{currentPage + '/' + movieData?.total_pages}</p>
-                    <button disabled={currentPage === movieData?.total_pages} onClick={nextPage} className='buttonPagination'>Next</button>
+                    <p style={{ color: theme ? 'black' : '#d3d3d3' }}>{currentPage + '/' + movies.total_pages}</p>
+                    <button disabled={currentPage === movies.total_pages} onClick={nextPage} className='buttonPagination'>Next</button>
                 </div>
-
             </div>
         </div>
     );

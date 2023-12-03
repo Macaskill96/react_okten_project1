@@ -21,7 +21,9 @@
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
     "react-star-rating-component-new": "^1.0.6",
-    "react-icons": "^4.8.0"
+    "react-icons": "^4.8.0",
+    "react-redux": "^8.1.3",
+    "@reduxjs/toolkit": "^1.9.7"
   },
   "scripts": {
     "start": "react-scripts start",

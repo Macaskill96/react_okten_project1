@@ -39,12 +39,18 @@
     background: linear-gradient(to bottom right, #9f9e9e, #626262);
 }
 .buttonDiv {
-    width: 400px;
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-around;
     margin-top: 15px;
     margin-bottom: 15px;
+}
+.buttonDiv div {
+    display: flex;
+    align-items: center;
+}
+.buttonDiv div button {
+    margin: 40px;
 }
 
 

@@ -1,27 +1,17 @@
-.logo {
-    width: 150px;
-    height: 40px;
+.logo img {
+    width: 170px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
-.logo h3 {
-    font-family: "Arial Rounded MT Bold";
-    font-size: 30px;
-    color: #9f9e9e;
-}
-
-.logoDark {
-    width: 150px;
-    height: 40px;
+.logoDark img {
+    width: 170px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.logoDark h3 {
-    font-family: "Arial Rounded MT Bold";
-    font-size: 30px;
-    color: black;
+    cursor: pointer;
 }

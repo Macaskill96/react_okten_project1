@@ -14,7 +14,7 @@ const Header = () => {
     return (
         <div className={theme? 'header' : 'headerDark'}>
             <Logo/>
-            <Link to='/movie' className={theme? 'link': 'linkDark'}>Movies</Link>
+            <Link to='movie' className={theme? 'link': 'linkDark'}>Movies</Link>
             <Link to='/genres' className={theme? 'link': 'linkDark'}>Genres</Link>
             <SearchForm/>
             <Switch/>

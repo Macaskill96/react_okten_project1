@@ -28,3 +28,10 @@
     background: linear-gradient(to bottom right, #949393, #2f2f2f);
     z-index: 1;
 }
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}

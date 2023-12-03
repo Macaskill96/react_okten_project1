@@ -1,25 +1,35 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
+import {useSearchParams} from "react-router-dom";
 
-const usePagination = (initialPage = 1) => {
-    const [currentPage, setCurrentPage] = useState(initialPage);
+const usePagination = (initialPage: number = 1) => {
+    const [queryPage, setQueryPage] = useSearchParams({page:"1"})
+    const [currentPage, setCurrentPage] = useState(Number(queryPage.get('page') ?? '1'));
 
     const goToPage = (pageNumber:number) => {
         setCurrentPage(pageNumber);
     };
 
+    const updateQuery = (page: number) => {
+        queryPage.set('page', page.toString());
+        setQueryPage(queryPage);
+    }
+
     const nextPage = () => {
-        setCurrentPage((prevPage) => prevPage + 1);
+        updateQuery(currentPage + 1)
     };
 
     const prevPage = () => {
-        setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+        updateQuery(Math.max(currentPage - 1, 1))
     };
+
+    useEffect(() => {
+        setCurrentPage( Number(queryPage.get('page') ?? '1'));
+    }, [queryPage])
 
     return {
         currentPage,
         goToPage,
         nextPage,
-
         prevPage,
     };
 };
